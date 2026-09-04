@@ -2288,17 +2288,21 @@ theInput.addEventListener('input', () => {
 <label for="checkFive">Посмотреть фильм</label>
 </form>
 <br>
-<div>Выполнено: <span id="theResult">0</span></div> */
+<div>Выполнено: <span id="theResultTrue">0</span></div>
+<div>Не выполнено: <span id="theResultFalse">0</span></div> */
 
 /* JavaScript: */
 let theForm = document.querySelector('#theForm')
-let theResult = document.querySelector('#theResult')
+let theResultTrue = document.querySelector('#theResultTrue')
+let theResultFalse = document.querySelector('#theResultFalse')
 
 theForm.addEventListener('click', (event) => {
     let theClick = event.target
     if(theClick.classList.contains('inpucter')) {
         const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked').length
-        theResult.textContent = `${ checkedBoxes }`
+        const notCheckedBoxes = document.querySelectorAll('input[type="checkbox"]:not(:checked)').length
+        theResultTrue.textContent = `${ checkedBoxes }`
+        theResultFalse.textContent = `${ notCheckedBoxes }`
     }
 })
-/* ---------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */

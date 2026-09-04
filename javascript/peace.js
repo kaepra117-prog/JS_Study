@@ -2,22 +2,22 @@
 /* Калкулятор-(0.10v) */
 
 while (true) {
-/* Все нужные Функций */
-const mathPluFn = (a, b) => {
-    return a + b
-}
-const mathMinFn = (a, b) => {
-    return a - b
-}
-const mathXFn = (a, b) => {
-    return a * b
-}
-const mathDelFn = (a, b) => {
-    return a / b
-}
+    /* Все нужные Функций */
+    const mathPluFn = (a, b) => {
+        return a + b
+    }
+    const mathMinFn = (a, b) => {
+        return a - b
+    }
+    const mathXFn = (a, b) => {
+        return a * b
+    }
+    const mathDelFn = (a, b) => {
+        return a / b
+    }
 
-/* Сами задачи */
-const hisMathWant = +prompt(`Что вы хотите сделать?
+    /* Сами задачи */
+    const hisMathWant = +prompt(`Что вы хотите сделать?
 1. Сложение (+)
 2. Вычитание (-)
 3. Умножение (*)
@@ -25,49 +25,49 @@ const hisMathWant = +prompt(`Что вы хотите сделать?
 
 (Выберите по числу!)`)
 
-if (!hisMathWant) {
-    alert("Вы завершили программу!")
-    break;
-} else if (hisMathWant === 1) {
-    const firstNum = +prompt(`Введите первое число`)
-    const secondNum = +prompt(`Введите второе число`)
-    const result = mathPluFn(firstNum, secondNum)
+    if (!hisMathWant) {
+        alert("Вы завершили программу!")
+        break;
+    } else if (hisMathWant === 1) {
+        const firstNum = +prompt(`Введите первое число`)
+        const secondNum = +prompt(`Введите второе число`)
+        const result = mathPluFn(firstNum, secondNum)
         if (!result) {
-        alert("Похоже вы ввели не то попробуйте снова!")
-    } else {
-        alert(`Вот ваш резултать: ${result}`)
-    }
-} else if (hisMathWant === 2) {
-    const firstNum = +prompt(`Введите первое число`)
-    const secondNum = +prompt(`Введите второе число`)
-    const result = mathMinFn(firstNum, secondNum)
+            alert("Похоже вы ввели не то попробуйте снова!")
+        } else {
+            alert(`Вот ваш резултать: ${result}`)
+        }
+    } else if (hisMathWant === 2) {
+        const firstNum = +prompt(`Введите первое число`)
+        const secondNum = +prompt(`Введите второе число`)
+        const result = mathMinFn(firstNum, secondNum)
         if (!result) {
-        alert("Похоже вы ввели не то попробуйте снова!")
-    } else {
-        alert(`Вот ваш резултать: ${result}`)
-    }
-} else if (hisMathWant === 3) {
-    const firstNum = +prompt(`Введите первое число`)
-    const secondNum = +prompt(`Введите второе число`)
-    const result = mathXFn(firstNum, secondNum)
+            alert("Похоже вы ввели не то попробуйте снова!")
+        } else {
+            alert(`Вот ваш резултать: ${result}`)
+        }
+    } else if (hisMathWant === 3) {
+        const firstNum = +prompt(`Введите первое число`)
+        const secondNum = +prompt(`Введите второе число`)
+        const result = mathXFn(firstNum, secondNum)
         if (!result) {
-        alert("Похоже вы ввели не то попробуйте снова!")
+            alert("Похоже вы ввели не то попробуйте снова!")
+        } else {
+            alert(`Вот ваш резултать: ${result}`)
+        }
+    } else if (hisMathWant === 4) {
+        const firstNum = +prompt(`Введите первое число`)
+        const secondNum = +prompt(`Введите второе число`)
+        const result = mathDelFn(firstNum, secondNum)
+        if (!result) {
+            alert("Похоже вы ввели не то попробуйте снова!")
+        } else {
+            alert(`Вот ваш резултать: ${result}`)
+        }
     } else {
-        alert(`Вот ваш резултать: ${result}`)
-    }
-} else if (hisMathWant === 4) {
-    const firstNum = +prompt(`Введите первое число`)
-    const secondNum = +prompt(`Введите второе число`)
-    const result = mathDelFn(firstNum, secondNum)
-    if (!result) {
         alert("Похоже вы ввели не то попробуйте снова!")
-    } else {
-        alert(`Вот ваш резултать: ${result}`)
+        continue;
     }
-} else {
-    alert("Похоже вы ввели не то попробуйте снова!")
-    continue;
-}
 
 }
 
@@ -79,7 +79,7 @@ if (!hisMathWant) {
 const nums = [0, 1, 6, 2, 3, 4, 5];
 
 /* forEach — "сделай что-то с каждым элементом". Просто выполняет действие, ничего не возвращает. */
-nums.forEach(num => {console.log(num * 2)});
+nums.forEach(num => { console.log(num * 2) });
 
 /* map — "создай новую коробку, изменив каждый элемент". Длина та же. */
 const double = nums.map(num => num * 2);
@@ -121,12 +121,12 @@ const legendarySquad = [
     { name: "kaepra", age: 30, auraLevel: 300 },
     { name: "Dak", age: 13, auraLevel: 500 },
     { name: "Darina", age: 100, auraLevel: 1000 },
-    { name: "Masha", age: 50, auraLevel: 400},
-    { name: "Maria", age: 17, auraLevel: 90}
+    { name: "Masha", age: 50, auraLevel: 400 },
+    { name: "Maria", age: 17, auraLevel: 90 }
 ];
 
 /* Показать всех Легенд! */
-legendarySquad.forEach(memember => {console.log(`(Her names: "${memember.name}" and Her ages: "${memember.age}" and Her auras level: "${memember.auraLevel}")`)});
+legendarySquad.forEach(memember => { console.log(`(Her names: "${memember.name}" and Her ages: "${memember.age}" and Her auras level: "${memember.auraLevel}")`) });
 
 /* Добавить еще немного ауры! */
 const doubleAura = legendarySquad.map(aura => aura.auraLevel + 5);
@@ -171,7 +171,7 @@ class Legendary {
 
     /* Проверяем его возрость */
     isAdlut(age) {
-        if(this.age >= 18) {
+        if (this.age >= 18) {
             return `Этот ${this.name} просто Старешый легенда!`
         } else {
             return `Этот ${this.name} просто Мелкий Легенда!`
@@ -180,20 +180,20 @@ class Legendary {
 
     /* Добавляем немного ауры */
     boostAura(amount) {
-    this.auraLevel = Math.min(this.auraLevel + amount, 1000);
-    return this.auraLevel;
+        this.auraLevel = Math.min(this.auraLevel + amount, 1000);
+        return this.auraLevel;
     }
 
     /* Наносим ему наказателный урон */
     takeDamage(damage) {
-    const before = this._health;
-    this._health = Math.max(this._health - damage, 0);
-    return before - this._health; // фактически нанесённый урон
-}
+        const before = this._health;
+        this._health = Math.max(this._health - damage, 0);
+        return before - this._health; // фактически нанесённый урон
+    }
 
-        /* Проверяем жив ли он  */
-        isAlive(health) {
-        if(this._health == 0) {
+    /* Проверяем жив ли он  */
+    isAlive(health) {
+        if (this._health == 0) {
             return `Этот ${this.name} умер😔`
         } else {
             return `Этот ${this.name} ЖИВ!!`
@@ -220,18 +220,19 @@ console.log(LegendaryMemoryOne.isAlive())
 
 /* Легендарный сквад! */
 const legendarySquad = [
-    new Legendary("Mansik", 1, 1000 ),
-    new Legendary("Mansur", 19,  250 ),
-    new Legendary("Valergh", 20,  200 ),
-    new Legendary("kaepra", 30,  300 ),
-    new Legendary("Dak", 13,  500 ),
-    new Legendary("Darina", 100,  1000 ),
-    new Legendary("Masha", 50,  400),
+    new Legendary("Mansik", 1, 1000),
+    new Legendary("Mansur", 19, 250),
+    new Legendary("Valergh", 20, 200),
+    new Legendary("kaepra", 30, 300),
+    new Legendary("Dak", 13, 500),
+    new Legendary("Darina", 100, 1000),
+    new Legendary("Masha", 50, 400),
     new Legendary("Maria", 17, 90)
 ];
 
 /* Выводим их статус */
-legendarySquad.forEach(static => {console.log(`
+legendarySquad.forEach(static => {
+    console.log(`
     Его Имя: "${static.name}",
     Его Возрость: "${static.age}",
     Его АУРА: ${static.auraLevel}`)
@@ -289,7 +290,7 @@ const ZSquadMemories = [
 ]
 
 /* Тот Цикл! */
-while(true) {
+while (true) {
     const hisPrompt = +prompt(`
 1. Добавить героя
 2. Удалить героя
@@ -300,51 +301,51 @@ while(true) {
 
 ВЫБЕРИТЕ ПО НОМЕРУ!`)
 
-console.log(hisPrompt)
-if (hisPrompt === 0) {
-    alert("Вы не ввели число!");
-    continue;
-} else if(!hisPrompt) {
-    alert("Вы вышли из программы!");
-    break;
-} else if(hisPrompt === 6) {
-    alert("Вы вышли из программы!");
-    break;
-} else if(hisPrompt === 5) {
-    alert(`Есть всего: ${ZSquadMemories.length} героев!`)
-} else if(hisPrompt === 4) {
-    const ZEye =  ZSquadMemories.forEach((memory) => {alert(memory.allInfo)});
-} else if(hisPrompt === 3) {
-    const promtFind = prompt("Введите имя героя, которого вы хотите найти?");
-    const hero = ZSquadMemories.find((memory) => memory.toFind(promtFind));
+    console.log(hisPrompt)
+    if (hisPrompt === 0) {
+        alert("Вы не ввели число!");
+        continue;
+    } else if (!hisPrompt) {
+        alert("Вы вышли из программы!");
+        break;
+    } else if (hisPrompt === 6) {
+        alert("Вы вышли из программы!");
+        break;
+    } else if (hisPrompt === 5) {
+        alert(`Есть всего: ${ZSquadMemories.length} героев!`)
+    } else if (hisPrompt === 4) {
+        const ZEye = ZSquadMemories.forEach((memory) => { alert(memory.allInfo) });
+    } else if (hisPrompt === 3) {
+        const promtFind = prompt("Введите имя героя, которого вы хотите найти?");
+        const hero = ZSquadMemories.find((memory) => memory.toFind(promtFind));
 
-    if (hero) {
-        alert(hero.allInfo);
-    } else {
-        alert(`Герой "${promtFind}" не найден`);
-    }
-} else if(hisPrompt === 2) {
-    const promtDelete = prompt("Введите имя героя, которого вы хотите удалить?");
-    const heroIndex = ZSquadMemories.findIndex((memory) => memory.toFind(promtDelete));
+        if (hero) {
+            alert(hero.allInfo);
+        } else {
+            alert(`Герой "${promtFind}" не найден`);
+        }
+    } else if (hisPrompt === 2) {
+        const promtDelete = prompt("Введите имя героя, которого вы хотите удалить?");
+        const heroIndex = ZSquadMemories.findIndex((memory) => memory.toFind(promtDelete));
 
-    if (heroIndex !== -1) {
-        ZSquadMemories.splice(heroIndex, 1);
-        alert(`Герой "${promtDelete}" удален`);
-    } else {
-        alert(`Герой "${promtDelete}" не найден`);
-    }
-} else if(hisPrompt === 1) {
-    const promtName = prompt("Введите имя героя:");
-    const promtAge = +prompt("Введите возраст героя:");
-    const promtPower = +prompt("Введите силу героя:");
+        if (heroIndex !== -1) {
+            ZSquadMemories.splice(heroIndex, 1);
+            alert(`Герой "${promtDelete}" удален`);
+        } else {
+            alert(`Герой "${promtDelete}" не найден`);
+        }
+    } else if (hisPrompt === 1) {
+        const promtName = prompt("Введите имя героя:");
+        const promtAge = +prompt("Введите возраст героя:");
+        const promtPower = +prompt("Введите силу героя:");
 
-    if (promtName && !isNaN(promtAge) && !isNaN(promtPower)) {
-        ZSquadMemories.push(new ZSquad(promtName, promtAge, promtPower));
-        alert(`Герой "${promtName}" добавлен`);
-    } else {
-        alert("Некорректные данные!");
+        if (promtName && !isNaN(promtAge) && !isNaN(promtPower)) {
+            ZSquadMemories.push(new ZSquad(promtName, promtAge, promtPower));
+            alert(`Герой "${promtName}" добавлен`);
+        } else {
+            alert("Некорректные данные!");
+        }
     }
-}
 }
 
 /* ---------------------------------------------------------------------- */
@@ -356,26 +357,26 @@ const hisTry = prompt(`Введите называние коффе которы
 
 function forHisTry(RUB) {
     const promo = prompt("Введите промокод на скидку если оно у вас есть!")
-    if(promo === "BOOST") {
+    if (promo === "BOOST") {
         const promoHas = RUB *= 0.8
         alert(`Поздравляю!!! промокод активирвован! с вас теперь ${RUB}`)
-    } else{
+    } else {
         alert("Такого промокода нет!!!")
     }
 }
 
-    if(hisTry === "Капучино") {
-        alert("Отлично! с вас 200 руб")
-        forHisTry(200)
-    } else if(hisTry === "Латте") {
-        alert("Отлично! с вас 250 руб")
-        forHisTry(250)
-    } else if(hisTry === "Эспрессо") {
-        alert("Отлично! с вас 150 руб")
-        forHisTry(150)
-    } else {
-        alert("Извентие вы неправилно ввели имя коффе или ввели несуеществуещего! либо вообще завершили программу!")
-    }
+if (hisTry === "Капучино") {
+    alert("Отлично! с вас 200 руб")
+    forHisTry(200)
+} else if (hisTry === "Латте") {
+    alert("Отлично! с вас 250 руб")
+    forHisTry(250)
+} else if (hisTry === "Эспрессо") {
+    alert("Отлично! с вас 150 руб")
+    forHisTry(150)
+} else {
+    alert("Извентие вы неправилно ввели имя коффе или ввели несуеществуещего! либо вообще завершили программу!")
+}
 
 /* ---------------------------------------------------------------------- */
 /* internet bank 0.20v */
@@ -383,10 +384,10 @@ let hisBalance = 1000
 
 
 function findError(operation) {
-    if(typeof operation !== "number" || Number.isNaN(operation)) {
+    if (typeof operation !== "number" || Number.isNaN(operation)) {
         alert("Вы должны ввести цифру а не чипуху!")
         return false
-    } else if(operation < 0 || operation > 100000) {
+    } else if (operation < 0 || operation > 100000) {
         alert("Такие цифры недопустимы!")
         return false
     }
@@ -401,7 +402,7 @@ while (true) {
 
         Выберите операцую строго по номеру!`)
 
-    if(inputForHim === 1) {
+    if (inputForHim === 1) {
         alert(`Вот ваш Баланс: ${hisBalance}`)
     } else if (inputForHim === 2) {
         const hisGetMoney = +prompt("Введите сумму денег который хотите вложить:")
@@ -434,33 +435,33 @@ for (let rounde = 0; rounde <= 3; rounde++) {
         ----------------
         Игрок: ${playerScore}
         Бот: ${botScore}`)
-    if(playerSelection) {
+    if (playerSelection) {
         let randomNumberForPlayer = Math.floor(Math.random() * 10)
         let randomNumberForBot = Math.floor(Math.random() * 10)
         alert(`
             Игроку выпало: ${randomNumberForPlayer}
             Боту Выпало: ${randomNumberForBot}`)
-            if(randomNumberForPlayer > randomNumberForBot) {
-                alert(`Игрок Побеждает! +1 очко игроку!`)
-                playerScore++
-            } else if(randomNumberForPlayer < randomNumberForBot) {
-                alert(`Бот Побеждает! +1 очко Боту!`)
-                botScore++
-            } else if(randomNumberForPlayer == randomNumberForBot) {
-                alert(`Ничя!`)
-            } else {
-                alert("Кажется что то пошло не так! СНОВА!!!")
-                continue;
-            }
-            if(rounde >= 3) {
-            if(playerScore > botScore) {
+        if (randomNumberForPlayer > randomNumberForBot) {
+            alert(`Игрок Побеждает! +1 очко игроку!`)
+            playerScore++
+        } else if (randomNumberForPlayer < randomNumberForBot) {
+            alert(`Бот Побеждает! +1 очко Боту!`)
+            botScore++
+        } else if (randomNumberForPlayer == randomNumberForBot) {
+            alert(`Ничя!`)
+        } else {
+            alert("Кажется что то пошло не так! СНОВА!!!")
+            continue;
+        }
+        if (rounde >= 3) {
+            if (playerScore > botScore) {
                 alert(`Итог Боя!!!
                     Очко Игрока: ${playerScore}
                     Очко Бота: ${botScore}
                     ----------------------
                     ИГОК ПОБЕЖДАЕТ ПОЗДРАВЛЯЕМ! ЧЕЛОВЕЧЕСТВО
                     НАВСЕГДА!!!`)
-            } else if(playerScore < botScore) {
+            } else if (playerScore < botScore) {
                 alert(`Итог Боя!!!
                     Очко Игрока: ${playerScore}
                     Очко Бота: ${botScore}
@@ -474,7 +475,8 @@ for (let rounde = 0; rounde <= 3; rounde++) {
                     ----------------------
                     НИЧЯ ЧТОЛЬ?`)
                 continue;
-            }}
+            }
+        }
     } else {
         alert("Вы сбежали с поля боя вас найдут и казнять! оч СКОРО!!!")
         break;
@@ -485,7 +487,7 @@ for (let rounde = 0; rounde <= 3; rounde++) {
 /* Программа управления достижениями 0.01 */
 let achievements = new Set(["Драконный Челик!", "Сладкобой!", "Стать Животным!", "Пипи!"])
 
-while(true) {
+while (true) {
     const hisPrompt = +prompt(`
         1 — Добавить новое достижение
         2 — Посмотреть список достижений
@@ -494,25 +496,25 @@ while(true) {
 
         (Выберите строго по номеру!)`)
 
-    if(hisPrompt === 1) {
+    if (hisPrompt === 1) {
         const hisAddNewAchw = prompt("Введите название вашего нового достижения:");
         const IsThereThen = achievements.has(hisAddNewAchw)
-        if(IsThereThen) {
+        if (IsThereThen) {
             alert("Вы заслужили эту ачивку заранее!")
-        } else{
+        } else {
             achievements.add(hisAddNewAchw)
             alert("Поздравляю! Вы Добавили свое новое достижение!")
         }
-    } else if(hisPrompt === 2) {
+    } else if (hisPrompt === 2) {
         for (const tag of achievements) {
-    alert(`Ваши достижения: "${tag}"`);
-    } if(achievements.size === 0) {
-        alert("У вас нет достижений!")
-    }
-    } else if(hisPrompt === 3) {
+            alert(`Ваши достижения: "${tag}"`);
+        } if (achievements.size === 0) {
+            alert("У вас нет достижений!")
+        }
+    } else if (hisPrompt === 3) {
         achievements.clear();
         alert("Все достижения сброшены!");
-    } else if(hisPrompt === 4 || !hisPrompt) {
+    } else if (hisPrompt === 4 || !hisPrompt) {
         alert("Вы завершили программу!")
         break;
     }
@@ -531,9 +533,9 @@ while (true) {
 
     Выберите Строго по номеру!!!`)
 
-    if(hisInput === 1) {
+    if (hisInput === 1) {
         const hisItem = prompt(" Введите называние вашего Предмета: ")
-        if(backPack.has(hisItem)) {
+        if (backPack.has(hisItem)) {
             let currentCount = backPack.get(hisItem);
             backPack.set(hisItem, currentCount + 1);
             alert(`Вы положили в инвентарь ${hisItem}`)
@@ -541,29 +543,29 @@ while (true) {
             backPack.set(hisItem, 1)
             alert(`Вы положили в инвентарь ${hisItem}`)
         }
-    } else if(hisInput === 2) {
+    } else if (hisInput === 2) {
         const hisItemDelete = prompt("Какой предмет вы хотите исползвовать: ")
-        if(backPack.has(hisItemDelete)) {
+        if (backPack.has(hisItemDelete)) {
             let currentCountTwo = backPack.get(hisItemDelete);
-        let newCount = currentCountTwo - 1;
+            let newCount = currentCountTwo - 1;
 
-        if (newCount > 0) {
-        backPack.set(hisItemDelete, newCount);
-        } else {
-        backPack.delete(hisItemDelete);
-        }
-        } else if(!backPack.has(hisItemDelete)) {
+            if (newCount > 0) {
+                backPack.set(hisItemDelete, newCount);
+            } else {
+                backPack.delete(hisItemDelete);
+            }
+        } else if (!backPack.has(hisItemDelete)) {
             alert("У вас нет такого предмета!")
         }
-    } else if(hisInput === 3) {
-        if(backPack.size === 0) {
+    } else if (hisInput === 3) {
+        if (backPack.size === 0) {
             alert("Сумка Пустая!")
         } else {
             for (const [item, count] of backPack) {
                 alert(`${item}: ${count}!`)
             }
         }
-    } else if(hisInput === 4) {
+    } else if (hisInput === 4) {
         alert("Прощайте!")
         break;
     } else {
@@ -588,11 +590,11 @@ class Pet {
             this._loveYou += 5
             alert(`(Ваш ${this.name} хорошо поел! "+15 к здоровю!" "И она вас немного начинает обажать!")
             <<Спосибо Хозяйн! это было так вкусно!😋>>`)
-    }else {
-        alert(`Ваш ${this.name} Сдох!!!☠️👻
+        } else {
+            alert(`Ваш ${this.name} Сдох!!!☠️👻
             "Но вы кормите её труп"`)
+        }
     }
-}
 
     play() {
         if (this._isAlive) {
@@ -602,13 +604,13 @@ class Pet {
             alert(`(Ваш ${this.name} хорошо Пойграл! "-15 от здоровя!" "+20 к счастю!" "Вы начинаете Ему нравится!!!")
                 <<ОГО! Хозяйн! это было так Весело!!🤣😁🤗😝❤️>>`)
         } else {
-        alert(`Ваш ${this.name} Сдох!!!☠️👻
+            alert(`Ваш ${this.name} Сдох!!!☠️👻
             "Но вы играете с её трупом!"`)
-    }
+        }
     }
 
     kill() {
-        if(this._isAlive) {
+        if (this._isAlive) {
             this._health -= 1000;
             this._loveYou -= 1000;
             this._happy -= 1000;
@@ -620,12 +622,12 @@ class Pet {
     }
 
     sexWithShe() {
-        if(this._isAlive) {
-            if(this._loveYou >= 100) {
-            this._health += 50;
-            this._loveYou += 60;
-            this._happy += 60;
-            alert(`<<Мдаа... Хозяйн! Я этого хочу!🤗❤️😋, ААА.. как же приятно!!🤤, ДАА продалжайте ПЖ силнеее!🥵, АЙЙЙЙ Я КОНЧАЮ ХОЗЯЙН!!!🥵🥵🥵🥵🤤🤤🤤🤤❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️>>`)
+        if (this._isAlive) {
+            if (this._loveYou >= 100) {
+                this._health += 50;
+                this._loveYou += 60;
+                this._happy += 60;
+                alert(`<<Мдаа... Хозяйн! Я этого хочу!🤗❤️😋, ААА.. как же приятно!!🤤, ДАА продалжайте ПЖ силнеее!🥵, АЙЙЙЙ Я КОНЧАЮ ХОЗЯЙН!!!🥵🥵🥵🥵🤤🤤🤤🤤❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️>>`)
             } else {
                 alert(`<<Нет хозяйн я этого особо не хочу!>> "Пока она вам не оч доверяяет!" `)
             }
@@ -642,12 +644,12 @@ class Pet {
         Жив ли она: ${this._isAlive}. `
     }
 }
-    const UserCreateName = prompt("Введите имя вашего питомца:");
-    const myPet = new Pet(UserCreateName)
-    console.log(myPet.fullStatus)
+const UserCreateName = prompt("Введите имя вашего питомца:");
+const myPet = new Pet(UserCreateName)
+console.log(myPet.fullStatus)
 
-    while(true) {
-        const hisWishlist = +prompt(`
+while (true) {
+    const hisWishlist = +prompt(`
             1 — Покормить питомца;
             2 — Поиграть с питомцем;
             3 - Секс с Питомцем;
@@ -657,36 +659,36 @@ class Pet {
 
             (Выберите строго по номеру!!!)`)
 
-            if(hisWishlist === 1) {
-                myPet.feed()
-            } else if(hisWishlist === 2) {
-                myPet.play()
-            } else if(hisWishlist === 3) {
-                myPet.sexWithShe()
-            } else if(hisWishlist === 4) {
-                myPet.kill()
-            } else if(hisWishlist === 5) {
-                alert(myPet.fullStatus)
-            } else if(hisWishlist === 6) {
-                alert(`Вы Вышли из Программы!`)
-                break;
-            } else {
-                alert(`Вы Завершили Программу!`)
-                break;
-            }
+    if (hisWishlist === 1) {
+        myPet.feed()
+    } else if (hisWishlist === 2) {
+        myPet.play()
+    } else if (hisWishlist === 3) {
+        myPet.sexWithShe()
+    } else if (hisWishlist === 4) {
+        myPet.kill()
+    } else if (hisWishlist === 5) {
+        alert(myPet.fullStatus)
+    } else if (hisWishlist === 6) {
+        alert(`Вы Вышли из Программы!`)
+        break;
+    } else {
+        alert(`Вы Завершили Программу!`)
+        break;
     }
+}
 /* ---------------------------------------------------------------------- */
 /* Функция варений Зелий  0.10v*/
 function crafter(potionTime, craftName) {
     return new Promise((resolve, reject) => {
         alert(`Подождите мы крафтим... ${craftName} В течений ${potionTime}...`)
         setTimeout(() => {
-        if(Math.random() > 0.3) {
-            resolve(`Зелья ${craftName} Успешно сварено!`);
-        } else {
-            reject(`Зелья ${craftName} Взорвался! Провал!!!`);
-        }
-    }, potionTime * 1000)
+            if (Math.random() > 0.3) {
+                resolve(`Зелья ${craftName} Успешно сварено!`);
+            } else {
+                reject(`Зелья ${craftName} Взорвался! Провал!!!`);
+            }
+        }, potionTime * 1000)
     })
 }
 
@@ -697,26 +699,26 @@ const hisLaborotory = +prompt(`Какое зелья вы хотите свар�
 
     Выберите строго по номеру!`)
 
-    switch(hisLaborotory) {
-        case 1:
-            crafter(2, "Лечения")
-                .then((result) => alert(result))
-                .catch((error) => alert(error))
-            break;
-        case 2:
-            crafter(3, "Маны")
-                .then((result) => alert(result))
-                .catch((error) => alert(error))
-            break;
-        case 3:
-            crafter(5, "Невидимости")
-                .then((result) => alert(result))
-                .catch((error) => alert(error))
-            break;
-        default:
-            alert("Ты ввел что то другое и завершил программу!")
+switch (hisLaborotory) {
+    case 1:
+        crafter(2, "Лечения")
+            .then((result) => alert(result))
+            .catch((error) => alert(error))
         break;
-    }
+    case 2:
+        crafter(3, "Маны")
+            .then((result) => alert(result))
+            .catch((error) => alert(error))
+        break;
+    case 3:
+        crafter(5, "Невидимости")
+            .then((result) => alert(result))
+            .catch((error) => alert(error))
+        break;
+    default:
+        alert("Ты ввел что то другое и завершил программу!")
+        break;
+}
 
 /* ---------------------------------------------------------------------- */
 /* realBattle 0.10v */
@@ -735,22 +737,22 @@ let monster = {
 }
 
 async function startBattle() {
-    while(true) {
+    while (true) {
         console.log(`${hero.name} аттакует острым мечом ${monster.name} и наносит ему урон -${hero.damage}!`)
         await sleep(1500)
         monster.health -= 60
         console.log(`У ${monster.name} осталось вот столко HP:${monster.health}!`)
-        if(monster.health <= 0) {
+        if (monster.health <= 0) {
             console.log(`${monster.name} УМЕР! Победил ${hero.name}`)
             break;
-        } else{
+        } else {
             console.log(`${monster.name} атакует ${hero.name} силными когтями! и наносит ему урон -${monster.damage}!`)
             await sleep(1500)
             hero.health -= 30
             console.log(`У ${hero.name} осталось вот столко HP:${hero.health}!`)
-            if(hero.health <= 0) {
+            if (hero.health <= 0) {
                 console.log(`${hero.name} УМЕР! Победил ${monster.name}`)
-            break;
+                break;
             } else {
                 continue;
             }
@@ -779,14 +781,14 @@ herButton.addEventListener('click', () => {
     myDiv.textContent = `КВЕСТ: ${herTxt}`;
     herListWin.append(myDiv)
     herInput.value = ""
-try {
-    if(herTxt === "") {
-        throw new Error("Строка не можеть быть пустым!")
-    }
-} catch(error){
-    const qList = console.log(herListWin.innerHTML += `
+    try {
+        if (herTxt === "") {
+            throw new Error("Строка не можеть быть пустым!")
+        }
+    } catch (error) {
+        const qList = console.log(herListWin.innerHTML += `
     <div>${error.message}</div>`)
-}
+    }
 })
 /* ---------------------------------------------------------------------- */
 /* Цвет Ауры! 0.10v */
@@ -942,7 +944,7 @@ addQuestBtn.addEventListener('click', () => {
     let questName = questTitle.value.trim();
     let questHard = questRank.value;
 
-    if(questName === "") {
+    if (questName === "") {
         return
     }
 
@@ -989,7 +991,7 @@ shopHtml.addEventListener('click', (event) => {
     let herName = clickedElement.dataset.name
     console.log(herPrice, herName)
 
-    if(hisBalance < herPrice) {
+    if (hisBalance < herPrice) {
         alert(`У вас нехватаеть денег!`)
     } else {
         hisBalance -= herPrice
@@ -1035,17 +1037,17 @@ let battleStatus = document.querySelector('#battleStatus')
 
 actionPanel.addEventListener('click', (event) => {
     let clickedEl = event.target
-    if(clickedEl.classList.contains('attack-btn')) {
+    if (clickedEl.classList.contains('attack-btn')) {
         let hisDamage = Number(clickedEl.dataset.damage)
 
         currentBossHp = currentBossHp - hisDamage
         let hpPercent = (currentBossHp / MAX_BOSS_HP) * 100;
 
-        if(currentBossHp <= 500 && currentBossHp >= 0) {
+        if (currentBossHp <= 500 && currentBossHp >= 0) {
             hpText.innerHTML = `${currentBossHp}`
             hpFill.style.width = hpPercent + '%'
 
-            if(hpPercent <= 0) {
+            if (hpPercent <= 0) {
                 let newStat = document.createElement('div')
                 newStat.textContent = `Враг Повержен! 🥳🏆`;
                 battleStatus.append(newStat)
@@ -1102,9 +1104,9 @@ categoryButtons.addEventListener('click', (event) => {
             let itemCategory = item.dataset.category;
             if (itemCategory === cateElemen) {
                 item.style.display = 'block';
-            }else if (cateElemen === 'all') {
+            } else if (cateElemen === 'all') {
                 item.style.display = 'block';
-            }else {
+            } else {
                 item.style.display = 'none';
             }
         });
@@ -1164,7 +1166,7 @@ let activeContent = document.querySelector('.tab-content.active')
 tabButtons.addEventListener('click', (event) => {
     let clickedElem = event.target
 
-    if(clickedElem.classList.contains('tab-btn')) {
+    if (clickedElem.classList.contains('tab-btn')) {
         let currentActive = tabButtons.querySelector('.tab-btn.active');
         if (currentActive && currentActive !== clickedElem) {
             currentActive.classList.remove('active');
@@ -1174,11 +1176,12 @@ tabButtons.addEventListener('click', (event) => {
             activeContent.classList.remove('active')
             let contentBlock = document.querySelector('#' + targetTab);
             contentBlock.classList.add('active')
-        console.log("Click!")
-    } else {
-        console.log("No click!")
+            console.log("Click!")
+        } else {
+            console.log("No click!")
+        }
     }
-}})
+})
 
 /* --------------------------------------------------------------------- */
 /* Заполнение выполненого миссий! 0.10v */
@@ -1210,7 +1213,7 @@ missionForm.addEventListener('submit', (event) => {
     let missionInfoOfTitle = missionTitle.value.trim();
     let missionInfoOfExp = Number(missionExp.value);
 
-    if(missionInfoOfTitle === "" || missionInfoOfExp <= 0) {
+    if (missionInfoOfTitle === "" || missionInfoOfExp <= 0) {
         return;
     }
 
@@ -1232,18 +1235,18 @@ missionForm.addEventListener('submit', (event) => {
 });
 
 missionLog.addEventListener('click', (event) => {
-        let clickedElement = event.target
-        if(clickedElement.classList.contains('delete-btn'))  {
-            let minusExpValue = Number(clickedElement.dataset.expval)
-            total -= minusExpValue
-            totalExp.textContent = `${total}`
-            console.log(minusExpValue)
+    let clickedElement = event.target
+    if (clickedElement.classList.contains('delete-btn')) {
+        let minusExpValue = Number(clickedElement.dataset.expval)
+        total -= minusExpValue
+        totalExp.textContent = `${total}`
+        console.log(minusExpValue)
 
-            clickedElement.closest('.mission-item').remove()
-        } else {
-            console.log("No ok!")
-        }
-    })
+        clickedElement.closest('.mission-item').remove()
+    } else {
+        console.log("No ok!")
+    }
+})
 /* --------------------------------------------------------------------- */
 /* Система распределения очков 0.10v*/
 /* HTML:
@@ -1292,28 +1295,28 @@ statsList.addEventListener('click', (event) => {
     let numPerse = Number(newNum.textContent)
 
     if (clicked.classList.contains('btn-inc')) {
-        if(freePoints > 0) {
+        if (freePoints > 0) {
             freePoints -= 1
             numPerse += 1
             newNum.textContent = numPerse
             freePointsHTML.textContent = freePoints
         }
 
-    console.log(numPerse);
-    console.log(freePoints);
-    console.log("Pluse");
+        console.log(numPerse);
+        console.log(freePoints);
+        console.log("Pluse");
 
-    } else if(clicked.classList.contains('btn-dec')) {
-        if(freePoints < 10) {
+    } else if (clicked.classList.contains('btn-dec')) {
+        if (freePoints < 10) {
             freePoints += 1
             numPerse -= 1
             newNum.textContent = numPerse
             freePointsHTML.textContent = freePoints
         }
 
-    console.log(numPerse);
-    console.log(freePoints);
-    console.log("Minuse!")
+        console.log(numPerse);
+        console.log(freePoints);
+        console.log("Minuse!")
 
     } else {
         console.log("NO clicked!")
@@ -1357,15 +1360,15 @@ let statusMsg = document.querySelector('#statusMsg')
 
 gearList.addEventListener('click', (event) => {
     let clickedElement = event.target
-    if(clickedElement.classList.contains('gear-item')) {
+    if (clickedElement.classList.contains('gear-item')) {
         let hisWeight = Number(clickedElement.dataset.weight);
         console.log(hisWeight)
-        if(clickedElement.classList.contains('equipped')) {
+        if (clickedElement.classList.contains('equipped')) {
             clickedElement.classList.remove('equipped')
             totalWeight -= hisWeight
             console.log('Mm')
         } else {
-            if(totalWeight + hisWeight > MAX_WEIGHT) {
+            if (totalWeight + hisWeight > MAX_WEIGHT) {
                 alert("Too Hevy");
             } else {
                 clickedElement.classList.add('equipped')
@@ -1378,9 +1381,9 @@ gearList.addEventListener('click', (event) => {
     let realWidth = Number(totalWeightHTML.textContent)
     console.log(realWidth)
 
-    if(totalWeight === MAX_WEIGHT) {
+    if (totalWeight === MAX_WEIGHT) {
         statusMsg.textContent = `⚠️ Рюкзак загружен полностью!`
-    } else if(totalWeight === 0) {
+    } else if (totalWeight === 0) {
         statusMsg.textContent = `Статус: Рюкзак свободен.`
     } else {
         statusMsg.textContent = `Статус: Набор снаряжения в норме.`
@@ -1453,7 +1456,7 @@ let mainContainerFn = document.querySelector('.main-container')
 
 circleFunction.addEventListener('click', () => {
     circleFunction.classList.toggle('circleActive')
-    if(circleFunction.classList.contains('circleActive')) {
+    if (circleFunction.classList.contains('circleActive')) {
         bodyColorFunction.classList.add('body-color')
         mainContainerFn.classList.add('main-container-activator')
     } else {
@@ -1552,22 +1555,22 @@ let questStatus = document.querySelector('#questStatus')
 
 questList.addEventListener('change', (event) => {
     let changed = event.target
-    if(changed.classList.contains('quest-check')) {
+    if (changed.classList.contains('quest-check')) {
         let bigerItem = event.target.closest('.quest-item')
         console.log('Mimishki')
 
         const completedCount = document.querySelectorAll('.quest-check:checked').length;
         const allCount = document.querySelectorAll('.quest-check').length
 
-        if(event.target.checked === true) {
+        if (event.target.checked === true) {
             bigerItem.classList.add('completed')
             let theComleted = (completedCount / allCount) * 100
             console.log(theComleted);
             progressText.textContent = `${completedCount} / ${allCount}`
             percentText.textContent = `${theComleted}%`
             progressBar.style.width = `${theComleted}%`
-            if(theComleted === 100) {
-            questStatus.textContent = `Mission Completed`
+            if (theComleted === 100) {
+                questStatus.textContent = `Mission Completed`
             } else {
                 questStatus.textContent = `Mission comming`
             }
@@ -1579,8 +1582,8 @@ questList.addEventListener('change', (event) => {
             progressText.textContent = `${completedCount} / ${allCount}`
             percentText.textContent = `${theComleted}%`
             progressBar.style.width = `${theComleted}%`
-            if(theComleted === 100) {
-            questStatus.textContent = `Mission Completed`
+            if (theComleted === 100) {
+                questStatus.textContent = `Mission Completed`
             } else {
                 questStatus.textContent = `Mission comming`
             }
@@ -1603,7 +1606,7 @@ let inputPassworder = document.querySelector('#inputPassworder')
 let buttonForPassword = document.querySelector('#buttonForPassword')
 
 buttonForPassword.addEventListener('click', () => {
-    if(inputPassworder.type === "text") {
+    if (inputPassworder.type === "text") {
         inputPassworder.type = "password"
         buttonForPassword.textContent = "Показать Пароль!"
     } else {
@@ -1681,13 +1684,13 @@ btnForInpukter.addEventListener('click', () => {
     let inputInfo = inpukterForName.value.trim().toLowerCase()
     console.log(inputInfo)
 
-    if(inputInfo === "") {
+    if (inputInfo === "") {
         resultInfo.textContent = `Введите хоть что то! оригинальное!`
-    } else{
-        if(inputInfo.length >= 3) {
+    } else {
+        if (inputInfo.length >= 3) {
             const formattedName = inputInfo[0].toUpperCase() + inputInfo.slice(1);
             resultInfo.textContent = `Имя Принято! ${formattedName}`
-        } else{
+        } else {
             resultInfo.textContent = `Имя Слишком короткое! хотя бы 3 буквы!`
         }
     }
@@ -1709,16 +1712,17 @@ let maxSimbols = 20;
 txtFormArea.addEventListener('input', (event) => {
     let txtAreaLength = event.target.value.replaceAll(' ', '').length;
 
-    if(txtAreaLength > 20) {
+    if (txtAreaLength > 20) {
         console.log("it's enought!")
-    } else{
+    } else {
         console.log('Колиество букв!', txtAreaLength);
         let matemProg = maxSimbols - txtAreaLength
         txtForInfo.textContent = `${matemProg}`
-        if(matemProg > 0) {
+        if (matemProg > 0) {
             return;
+        }
     }
-}})
+})
 
 /* --------------------------------------------------------------------- */
 /* Изменение Статуса! 0.10v! */
@@ -1837,10 +1841,10 @@ let theBtn = document.querySelector('#theBtn')
 let theClickJs = 0;
 
 theBtn.addEventListener('click', () => {
-    if(theClickJs === 1) {
+    if (theClickJs === 1) {
         theInfoAboutJs.textContent = ''
         theBtn.textContent = 'Показать Ответ!'
-    } else{
+    } else {
         theInfoAboutJs.textContent = 'JavaScript — язык программирования, который позволяет добавлять логику и интерактивность на веб-страницы.'
         theBtn.textContent = 'Скрыть Ответ!'
     }
@@ -1922,8 +1926,8 @@ theRSBtnParent.append(theResetBtn)
 theButtons.addEventListener('click', (event) => {
     let theClicker = event.target
 
-    if(theClicker.classList.contains('btnSelect')) {
-        if(theClicker.dataset.theanswer === "JS") {
+    if (theClicker.classList.contains('btnSelect')) {
+        if (theClicker.dataset.theanswer === "JS") {
             theResult.textContent = `
             Ответ Верный!✅
             Вы Выйграли 🤑💲💲💲🪙🪙🪙`
@@ -1938,10 +1942,10 @@ theButtons.addEventListener('click', (event) => {
             theResetBtn.style.display = ''
             theResetBtn.addEventListener('click', () => {
                 btnSelect.forEach((btn) => {
-                btn.disabled = false
-            })
-            theResult.textContent = `Ожидание!`
-            theResetBtn.style.display = 'none'
+                    btn.disabled = false
+                })
+                theResult.textContent = `Ожидание!`
+                theResetBtn.style.display = 'none'
             })
         }
     }
@@ -1965,26 +1969,26 @@ const RUbtn = document.querySelector('.RUbtn')
 
 const translations = {
     ru: {
-    title: "Мой Текст!",
-    description: `Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты знаках, напоивший алфавит маленький свой это безопасную первую безорфографичный свою приставка рыбного, последний великий своих он. Курсивных, до. Строчка не по всей журчит возвращайся выйти маленькая текст свою предупреждал прямо, парадигматическая, одна пунктуация всеми, безорфографичный домах все страна. Заглавных, великий.`
+        title: "Мой Текст!",
+        description: `Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты знаках, напоивший алфавит маленький свой это безопасную первую безорфографичный свою приставка рыбного, последний великий своих он. Курсивных, до. Строчка не по всей журчит возвращайся выйти маленькая текст свою предупреждал прямо, парадигматическая, одна пунктуация всеми, безорфографичный домах все страна. Заглавных, великий.`
     },
     en: {
-    title: "My Text!",
-    description: `Far, far away, beyond the verbal mountains, in the land of vowels and consonants, live fishy texts. You, who have watered the alphabet, your small one, this is the first safe, orthographically correct one, the last great one, the fishy prefix. Italics, before. The line doesn’t flow all the way, come back, go out, the small text warned you directly, paradigmatic, one punctuation, orthographically correct, in all the houses, the whole country. Capitalized, great.`
+        title: "My Text!",
+        description: `Far, far away, beyond the verbal mountains, in the land of vowels and consonants, live fishy texts. You, who have watered the alphabet, your small one, this is the first safe, orthographically correct one, the last great one, the fishy prefix. Italics, before. The line doesn’t flow all the way, come back, go out, the small text warned you directly, paradigmatic, one punctuation, orthographically correct, in all the houses, the whole country. Capitalized, great.`
     }
 };
 
 theSelectLangBtn.addEventListener('click', (event) => {
     let theClick = event.target
 
-    if(theClick.classList.contains('RUbtn')) {
+    if (theClick.classList.contains('RUbtn')) {
         RUbtn.classList.add('selected')
         ENbtn.classList.remove('selected')
         console.log('Privet!')
 
         theTitle.textContent = translations.ru.title;
         theTXT.textContent = translations.ru.description;
-    } else if(theClick.classList.contains('ENbtn')) {
+    } else if (theClick.classList.contains('ENbtn')) {
         RUbtn.classList.remove('selected')
         ENbtn.classList.add('selected')
         console.log('Hello!')
@@ -2015,32 +2019,32 @@ theSelectLangBtn.addEventListener('click', (event) => {
         <button class="theCateBtn" data-category-btn="nothing">Ничего!</button>
     </div> */
 
-    /* JavaScript: */
+/* JavaScript: */
 const theBtnS = document.querySelector('#theBtnS')
 const theSelects = document.querySelectorAll('.theStore')
 
 theBtnS.addEventListener('click', (event) => {
     let theClick = event.target
 
-    if(theClick.classList.contains('theCateBtn')) {
+    if (theClick.classList.contains('theCateBtn')) {
         let theCategory = theClick.dataset.categoryBtn
         console.log(theCategory)
 
-        if(theCategory === "all") {
+        if (theCategory === "all") {
             theSelects.forEach((item) => {
                 item.style.display = ''
             })
-        } else if(theCategory === "fruit") {
+        } else if (theCategory === "fruit") {
             theSelects.forEach((item) => {
                 let allCategory = item.dataset.category
-                if(allCategory === "farm") {
-                item.style.display = 'none'
+                if (allCategory === "farm") {
+                    item.style.display = 'none'
                 }
-                if(allCategory === "fruit") {
-                item.style.display = ''
+                if (allCategory === "fruit") {
+                    item.style.display = ''
                 }
             })
-        } else{
+        } else {
             theSelects.forEach((item) => {
                 item.style.display = 'none'
             })
@@ -2102,24 +2106,24 @@ const theBtnHTML = document.querySelectorAll('.theBtn')
 
 theUserBtnColor.addEventListener('click', (event) => {
     let theBtn = event.target.classList.contains('theBtn')
-    if(theBtn) {
+    if (theBtn) {
         let theDataset = event.target.dataset.colorBack;
         console.log(theDataset)
-        if(theDataset === "violet") {
+        if (theDataset === "violet") {
             theColorBlock.style.backgroundColor = 'blueviolet'
             theBtnHTML.forEach((btn) => {
                 btn.style.backgroundColor = '#EFEFEF'
             })
             event.target.style.backgroundColor = 'blueviolet'
         }
-        else if(theDataset === "green") {
+        else if (theDataset === "green") {
             theColorBlock.style.backgroundColor = 'green'
             theBtnHTML.forEach((btn) => {
                 btn.style.backgroundColor = '#EFEFEF'
             })
             event.target.style.backgroundColor = 'green'
         }
-        else if(theDataset === "blue") {
+        else if (theDataset === "blue") {
             theColorBlock.style.backgroundColor = 'blue'
             theBtnHTML.forEach((btn) => {
                 btn.style.backgroundColor = '#EFEFEF'
@@ -2157,11 +2161,11 @@ buttons.forEach((btn) => {
         event.currentTarget.classList.add('active');
 
         let theClick = event.target.dataset.tab
-        if(theClick === 'main') {
+        if (theClick === 'main') {
             theTxtContent(theAllWin, main)
-        } else if(theClick === 'profile') {
+        } else if (theClick === 'profile') {
             theTxtContent(theAllWin, profile)
-        } else if(theClick === 'settings') {
+        } else if (theClick === 'settings') {
             theTxtContent(theAllWin, settings)
         }
     });
@@ -2189,7 +2193,7 @@ let theLengthNumber = Number(theLength.textContent)
 allProducts.addEventListener('click', (event) => {
     let theClick = event.target
 
-    if(theClick.classList.contains('theDeleteBtn')) {
+    if (theClick.classList.contains('theDeleteBtn')) {
         theLengthNumber--
         theLength.textContent = `${theLengthNumber}`
 
@@ -2218,8 +2222,8 @@ let theResultNum = Number(theResult.textContent)
 
 theAllProducts.addEventListener('click', (event) => {
     let theClick = event.target
-    if(theClick.classList.contains('theProductBtn')) {
-        if(theClick.classList.contains('active')) {
+    if (theClick.classList.contains('theProductBtn')) {
+        if (theClick.classList.contains('active')) {
             theClick.textContent = '[ Добавлено ✅]'
             theResultNum++
             theResult.textContent = `${theResultNum}`
@@ -2230,7 +2234,7 @@ theAllProducts.addEventListener('click', (event) => {
             theResult.textContent = `${theResultNum}`
             theClick.classList.add('active')
         }
-        }
+    }
 })
 /* --------------------------------------------------------------------- */
 /* Сетчик найденных предметов! 0.10v! */
@@ -2255,7 +2259,7 @@ theInput.addEventListener('input', () => {
     let count = 5;
     theList.forEach((val) => {
         let theTxtValue = val.textContent.trim().toLowerCase()
-        if(/* theInputValue == theTxtValue  */theTxtValue.includes(theInputValue)) {
+        if (/* theInputValue == theTxtValue  */theTxtValue.includes(theInputValue)) {
             val.style.display = 'block'
         } else {
             val.style.display = 'none'
@@ -2265,3 +2269,36 @@ theInput.addEventListener('input', () => {
     theResult.textContent = count
 })
 /* --------------------------------------------------------------------- */
+/* Считаем сколько то чекбоксов выбрано! 0.10v! */
+/* HTML:
+<form id="theForm">
+<input class="inpucter" type="checkbox" name="checkOne">
+<label for="checkOne">Выучить JavaScript</label>
+<br>
+<input class="inpucter" type="checkbox" name="checkTwo">
+<label for="checkTwo">Сделать практику</label>
+<br>
+<input class="inpucter" type="checkbox" name="checkThree">
+<label for="checkThree">Почитать книгу</label>
+<br>
+<input class="inpucter" type="checkbox" name="checkFour">
+<label for="checkFour">Погулять</label>
+<br>
+<input class="inpucter" type="checkbox" name="checkFive">
+<label for="checkFive">Посмотреть фильм</label>
+</form>
+<br>
+<div>Выполнено: <span id="theResult">0</span></div> */
+
+/* JavaScript: */
+let theForm = document.querySelector('#theForm')
+let theResult = document.querySelector('#theResult')
+
+theForm.addEventListener('click', (event) => {
+    let theClick = event.target
+    if(theClick.classList.contains('inpucter')) {
+        const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked').length
+        theResult.textContent = `${ checkedBoxes }`
+    }
+})
+/* ---------------------------------------------------------------------- */

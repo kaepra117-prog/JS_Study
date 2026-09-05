@@ -2306,3 +2306,31 @@ theForm.addEventListener('click', (event) => {
     }
 })
 /* --------------------------------------------------------------------- */
+/* Работа с селекторами! 0.10v! */
+/* HTML:
+<form id="pointCountry">
+        <select name="point" id="thepointCountry">
+            <option value="">--не выбран--</option>
+            <option value="Казахстан 🇰🇿">Казахстан 🇰🇿</option>
+            <option value="Россия 🇷🇺">Россия 🇷🇺</option>
+            <option value="США 🇺🇸">США 🇺🇸</option>
+            <option value="Япония 🇯🇵">Япония 🇯🇵</option>
+        </select>
+        <div id="CountryResult">Страна не выбранно!</div>
+    </form> */
+
+    /* JavaScript: */
+const pointCountry = document.querySelector('#pointCountry')
+const CountryResult = document.querySelector('#CountryResult')
+
+pointCountry.addEventListener('change', (event) => {
+    const theFormsSelectedValue = document.forms[0].elements.point.value
+    const theFormsSelectedIndex = document.forms[0].elements.point.selectedIndex
+
+    if(theFormsSelectedIndex === 0) {
+        CountryResult.textContent = `Страна не выбранно!`
+    } else {
+        CountryResult.textContent = `Выбранный страна: ${theFormsSelectedValue}`
+    }
+})
+/* --------------------------------------------------------------------- */

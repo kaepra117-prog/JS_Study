@@ -2334,3 +2334,24 @@ pointCountry.addEventListener('change', (event) => {
     }
 })
 /* --------------------------------------------------------------------- */
+/* Проверка количество символов в паролье! 0.10v! */
+/* HTML:
+<input type="text" id="theInput" placeholder="Введите пароль">
+<div>Количество символов: <span id="theSimbolLength">0</span></div>
+<div id="theResult">Пароль еще  не введен!</div> */
+
+/* JavaScript: */
+const theInput = document.querySelector('#theInput')
+const theSimbolLength = document.querySelector('#theSimbolLength')
+const theResult = document.querySelector('#theResult')
+
+theInput.addEventListener('input', () => {
+    let theInputValue = theInput.value.trim().length
+    theSimbolLength.textContent = theInputValue
+    if(theInputValue >= 6) {
+        theResult.textContent = ' Пароль подходит!'
+    } else {
+        theResult.textContent = 'Пароль слишком короткий!'
+    }
+})
+/* --------------------------------------------------------------------- */

@@ -2355,3 +2355,43 @@ theInput.addEventListener('input', () => {
     }
 })
 /* --------------------------------------------------------------------- */
+/* Система опыта персонажа! 0.10v! */
+/* HTML:
+<div>Персонаж: <span id="thePersonName"></span> </div>
+    <div>Уровень: <span id="thePersonLevel"></span> </div>
+    <div>Опыт: <span id="thePersonXP"></span> XP</div>
+    <br>
+    <button id="theBtn">Получить опыт!</button> */
+
+/* JavaScript: */
+const thePersonName = document.querySelector('#thePersonName')
+const thePersonLevel = document.querySelector('#thePersonLevel')
+const thePersonXP = document.querySelector('#thePersonXP')
+const theBtn = document.querySelector('#theBtn')
+
+let theMainPerson = {
+    name: "Mansur",
+    level: 1,
+    xp: 0,
+}
+
+    thePersonName.textContent = theMainPerson.name
+    thePersonLevel.textContent = theMainPerson.level
+    thePersonXP.textContent = theMainPerson.xp
+
+theBtn.addEventListener('click', () => {
+    theMainPerson.xp += 25
+
+    if(theMainPerson.xp == 100) {
+        theMainPerson.level = 2
+    } else if(theMainPerson.xp == 200) {
+        theMainPerson.level = 3
+    } else if(theMainPerson.xp === 300) {
+        theMainPerson.level = 4
+    }
+
+    thePersonName.textContent = theMainPerson.name
+    thePersonLevel.textContent = theMainPerson.level
+    thePersonXP.textContent = theMainPerson.xp
+})
+/* --------------------------------------------------------------------- */

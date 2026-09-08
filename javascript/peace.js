@@ -2395,3 +2395,32 @@ theBtn.addEventListener('click', () => {
     thePersonXP.textContent = theMainPerson.xp
 })
 /* --------------------------------------------------------------------- */
+/* Проверка текст инпут полей ввода! 0.10v! */
+/* HTML:
+<form id="theForm">
+    <input class="InputForName" type="text" placeholder="Введите Имя">
+    <input class="InputForAge" type="text" placeholder="Введите Взораст">
+    <button class="BtnForInput" type="button">Регистрация</button>
+    <div>Результаты: <span class="theResult">Заполните поля!</span></div>
+</form> */
+
+/* JavaScript: */
+const theForm = document.querySelector('#theForm')
+
+theForm.addEventListener('click', (event) => {
+    let theClickLet = event.target
+    let InputForName = document.querySelector('.InputForName').value.trim()
+    let InputForAge = document.querySelector('.InputForAge').value
+    let theResult = document.querySelector('.theResult')
+
+        if(theClickLet.classList.contains('BtnForInput')) {
+            if(InputForName === "") {
+                theResult.textContent = 'Введите имя! поля пустое!'
+            } else if(InputForAge <= 17) {
+                theResult.textContent = 'Вам должно быть 18 лет!'
+            } else {
+                theResult.textContent = 'Регистрация успешно завершена!'
+            }
+        }
+})
+/* --------------------------------------------------------------------- */

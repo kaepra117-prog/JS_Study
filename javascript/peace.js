@@ -2424,3 +2424,22 @@ theForm.addEventListener('click', (event) => {
         }
 })
 /* --------------------------------------------------------------------- */
+/* Генерация случайнейших чисел! 0.10v! */
+/* HTML:
+<button class="theBtn">Сгенерировать число!</button>
+<div>Случайное число: <span class="result">0</span></div> */
+
+/* JavaScript: */
+const theBtn = document.querySelector('.theBtn')
+const result = document.querySelector('.result')
+
+theBtn.addEventListener('click', () => {
+    let RandomMath = Math.floor(Math.random() * 100) + 1;
+
+    if(RandomMath >= 50) {
+        result.textContent = `${RandomMath} Огроменный число! 🔥`
+    } else {
+        result.textContent = `${RandomMath} Маленкое число!`
+    }
+})
+/* --------------------------------------------------------------------- */

@@ -3,17 +3,60 @@
 
 // -------------------------------------------------------------------------
 /* Промис -это как общение типо загружается ли игра или нет! */
-const getData = (url) =>
-    new Promise((resolve, reject) =>
-        fetch(url)
-            .then(response => response.json())
-            .then(json => resolve(json))
-            .catch(error => reject(error))
-    )
-getData('https://jsonplaceholder.typicode.com/todos')
-    .then(data => console.log(data))
-    .catch(error => console.log(error.message))
+console.log("Hello, World!...");
 
+const p = new Promise((resolve, reject) => { /* Создание нового промиса! */
+    setTimeout(() => {
+        console.log('Hi...')
+        const backendDate = {
+            serv: 'async',
+            shi: 'no shi',
+            re: 'yes re',
+            port: 3000,
+        }
+
+        resolve(backendDate) /* resolve() -О том что программа завершена успешно! или завершено! А resolve(backendDate) -мы передаем что бы взять его и исползововать в Затеме! */
+    }, 2000)
+})
+
+p.then((data) => { /* -Затем!, (data)-и есть те данные от резолве!*/
+    console.log('Promise Resolved!', data)
+})
+/* ------------------------------------- */
+
+const sleep = ms => {
+    return new Promise(resolve => {
+        setTimeout(() =>
+            resolve(), ms
+        )
+    })
+}
+
+sleep(2000).then(() => {console.log('2 second complete!')})
+sleep(5000).then(() => {console.log('5 second complete!')}) /* -выполнится через нескокото секунд! */
+.finally(() => {console.log('COMPLETE!')}) /* - Всегда под конец! */
+
+Promise.all([sleep(2000), sleep(4000)]).then(() => {
+    console.log('Последный выполняемый промисы!')
+})
+Promise.race([sleep(2000), sleep(4000)]).then(() => {
+    console.log('первый выполняемый промисы!')
+})
+
+/* И еще и практика! для закрепа! */
+const randomBoolean = Math.random() < 0.5;
+
+new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if(randomBoolean) {
+            resolve('Сервер подключён!')
+        } else {
+            reject(new Error('Ошибка подключения к серверу!'))
+        }
+    }, 2000)
+})
+.then((result) => {console.log(result)})
+.catch((error) => {console.log(error)})
 // -------------------------------------------------------------------------
 /* Class Это шаблон для создания объектов */
 class mainFurrer {

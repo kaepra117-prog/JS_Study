@@ -2443,3 +2443,27 @@ theBtn.addEventListener('click', () => {
     }
 })
 /* --------------------------------------------------------------------- */
+/* Проверка значение инпута на номерост! 0.10v! */
+/* HTML:
+<input type="text" placeholder="Введите число" id="theInput">
+<button id="theBtn" type="button">Проверить</button>
+<br>
+<div id="theResult">Поля пустое! введите число!</div> */
+
+/* JavaScript: */
+const theInput = document.querySelector('#theInput')
+const theBtn = document.querySelector('#theBtn')
+const theResult = document.querySelector('#theResult')
+
+theBtn.addEventListener('click', () => {
+    let theInputValue = theInput.value.trim()
+    if(isNaN(theInputValue)) {
+        theResult.textContent = 'ВВедите число а не текст!'
+    } else if(theInputValue === "") {
+        theResult.textContent = 'Ваш поля пустое введите хоть что то! '
+    } else {
+        theResult.textContent = 'Отлично ваш номер принят! '
+    }
+    console.log(theInputValue)
+})
+/*----------------------------------------------------------------------- */

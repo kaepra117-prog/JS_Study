@@ -2467,3 +2467,43 @@ theBtn.addEventListener('click', () => {
     console.log(theInputValue)
 })
 /*----------------------------------------------------------------------- */
+/* Реальное проверка возроста с помощю оброботко ошибок! 0.10v! */
+/* HTML:
+<input id="inputForTheAge" type="text" placeholder="введите ваш возрост">
+<button id="buttonForTheAge">Проверить</button>
+<div id="resultForTheAge">Введите ваш возрост!</div> */
+
+/* JavaScript: */
+const inputForTheAge = document.querySelector('#inputForTheAge')
+const buttonForTheAge = document.querySelector('#buttonForTheAge')
+const resultForTheAge = document.querySelector('#resultForTheAge')
+
+buttonForTheAge.addEventListener('click', () => {
+    let inpukterValue = inputForTheAge.value.trim()
+    console.log(inpukterValue)
+    console.log('start!')
+
+    try{
+        if(inpukterValue === '') {
+            throw new Error('Введите возраст!')
+        }
+
+        const reoNum = Number(inpukterValue)
+
+        if(isNaN(reoNum)) {
+            throw new Error("Введите число возроста а не что то другое!")
+        } else if(reoNum <= 0) {
+            throw new Error("Взрост не может быть отрицательным!")
+        } else if(reoNum <= 17) {
+            throw new Error("Вам должно быть 18 лет или больше!")
+        } else {
+            resultForTheAge.textContent = 'Ваш возрость подходить!'
+        }
+    } catch (error) {
+        resultForTheAge.textContent = `Ошибка: ${error}`
+    } finally {
+    buttonForTheAge.style.color = '#333'
+}
+
+})
+/* --------------------------------------------------------------------- */

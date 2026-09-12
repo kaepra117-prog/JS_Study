@@ -2507,3 +2507,28 @@ buttonForTheAge.addEventListener('click', () => {
 
 })
 /* --------------------------------------------------------------------- */
+/* Первая практика по классу! отнимание ХП! 0.10v! */
+/* JavaScript: */
+class Player {
+    constructor(name, health) {
+        this.name = name
+        this.health = health
+    }
+
+    takeDamage() {
+        this.health -= 30
+        if(this.health <= 0) {
+            return console.log(` игрок ${this.name} Погиб!`)
+        }
+        return console.log(`У игрока осталось ${this.health} HP`)
+    }
+}
+
+const ply = new Player('Mansur', 100)
+console.log(ply)
+ply.takeDamage()
+ply.takeDamage()
+ply.takeDamage()
+ply.takeDamage()
+ply.takeDamage()
+/* --------------------------------------------------------------------- */

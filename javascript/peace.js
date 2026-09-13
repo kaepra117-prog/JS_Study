@@ -2516,19 +2516,18 @@ class Player {
     }
 
     takeDamage() {
-        this.health -= 30
+        this.health -= this.health * 0.3;
         if(this.health <= 0) {
             return console.log(` игрок ${this.name} Погиб!`)
         }
-        return console.log(`У игрока осталось ${this.health} HP`)
+        return console.log(`У игрока ${this.name} осталось ${this.health} HP`)
     }
 }
 
-const ply = new Player('Mansur', 100)
-console.log(ply)
-ply.takeDamage()
-ply.takeDamage()
-ply.takeDamage()
-ply.takeDamage()
-ply.takeDamage()
+const plyOne = new Player('Mansur', 100)
+const plyTwo = new Player('Valergh', 150)
+plyOne.takeDamage()
+
+plyTwo.takeDamage()
+
 /* --------------------------------------------------------------------- */

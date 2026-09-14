@@ -1732,22 +1732,18 @@ console.log(theFormsSelectedIndex) /* Через програмнно заста
 
 /* --------------------------------------------------------------------- */
 /* JavaScript формы — FormData, класс для сбора данных со всех полей формы */
-const formElement = document.querySelector('form');
+const gameForm = document.getElementById('gameForm');
 
-formElement.addEventListener('submit', (event) => {
-    event.preventDefault()
+gameForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    const formData = {}
+    const formData = new FormData(gameForm);
 
-    for (const element of formElement.elements) {
-        if (!element.name) {
-            continue;
-        }
+    const nickname = formData.get('nickname') /* -узнал ник! */
+    console.log(nickname)
 
-        formData[element.name] = element.value
-
-        console.log(formData)
-    }
+    const allData = Object.fromEntries(formData);
+    console.log('Все данные:', allData); /* -превратил все данные на обект! */
 }) /* -чтобы узнать что в элементах и все такое! */
 /* --------------------------------- */
 const formElement = document.querySelector('form');

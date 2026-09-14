@@ -2531,3 +2531,37 @@ plyOne.takeDamage()
 plyTwo.takeDamage()
 
 /* --------------------------------------------------------------------- */
+/* Система Кошалека через class()! 0.10v! */
+class Wallet {
+    constructor(owner, balance) {
+        this.owner = owner
+        this.balance = balance
+    }
+
+    showInfo() {
+        console.log(`Владелец: ${this.owner}, Баланс: ${this.balance}`)
+    }
+
+    deposit(sum) {
+        this.balance += sum
+        console.log(`Вы положили в свой банк ${sum}`)
+    }
+
+    withdraw(sum) {
+        if(this.balance <= 0) {
+            return console.log("у вас недостаточно средство!")
+        } else {
+            this.balance -= sum
+            console.log(`Вы забрали из своего банка ${sum}`)
+        }
+        
+    }
+}
+
+const bankOne = new Wallet("Mansur", 1000)
+bankOne.deposit(1500)
+bankOne.withdraw(2000)
+bankOne.withdraw(500)
+bankOne.withdraw(1)
+bankOne.showInfo()
+/* --------------------------------------------------------------------- */

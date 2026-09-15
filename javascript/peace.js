@@ -2565,3 +2565,26 @@ bankOne.withdraw(500)
 bankOne.withdraw(1)
 bankOne.showInfo()
 /* --------------------------------------------------------------------- */
+/* Подситатель слов! идеальное работающиое! 0.10v! */
+/* HTML:
+<form id="theUniform">
+    <textarea class="theInpucter" placeholder="Введите текст"></textarea>
+    <button type="submit" class="theBtn">Посчитать слова</button>
+    <div>Количество слов: <span class="theResult">0</span></div>
+</form> */
+
+/* JavaScript: */
+const theUniform = document.querySelector('#theUniform');
+
+theUniform.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let theClick = event.target;
+    let inputValue = theClick.querySelector('.theInpucter').value.trim()
+
+    if (theClick.querySelector('.theBtn')) {
+        console.log(inputValue)
+        const wordsCount = inputValue === '' ? 0 : inputValue.split(/\s+/).length;
+        console.log(wordsCount);
+    }
+})
+/* --------------------------------------------------------------------- */

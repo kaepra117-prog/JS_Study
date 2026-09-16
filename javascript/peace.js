@@ -2588,3 +2588,30 @@ theUniform.addEventListener('submit', (event) => {
     }
 })
 /* --------------------------------------------------------------------- */
+/* Счетчик с помощю событие клав!  0.10v */
+/* HTML:
+<div class="theNum">0</div>
+<div class="theNumInfo">Нажмите клавишу ↑ или ↓</div> */
+
+/* JavaScript: */
+const theNum = document.querySelector('.theNum');
+const theNumInfo = document.querySelector('.theNumInfo');
+let realNum = 0;
+
+document.addEventListener('keydown', (event) => {
+    const {key} = event
+    if(key === 'ArrowUp') {
+        theNumInfo.textContent = 'Нажата ↑ — +1 очко!'
+        realNum++
+    } else if(key === 'ArrowDown') {
+        if(realNum <= 0) {
+            theNumInfo.textContent = 'У вас Ноль!'
+            return
+        } else {
+            theNumInfo.textContent = 'Нажата ↓ — -1 очко!'
+            realNum--
+        }
+    }
+    theNum.textContent = realNum
+})
+/* --------------------------------------------------------------------- */

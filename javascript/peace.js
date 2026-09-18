@@ -2615,3 +2615,55 @@ document.addEventListener('keydown', (event) => {
     theNum.textContent = realNum
 })
 /* --------------------------------------------------------------------- */
+/* Практика с Работой focus/blur! 0.10v! */
+/* HTML:
+<input class="theInput inpucterForName" type="text" placeholder="Введите Имя">
+<input class="theInput inpucterForAge" type="text" placeholder="Введите Возрост">
+<div>Сейчас редактируется: <span class="theInfo">Ничего</span> </div> */
+
+/* CSS:
+.inFocus {
+    border: 3px solid black;
+    background-color: rgb(238, 238, 234);
+} */
+
+/* JavaScript: */
+const theInput = document.querySelectorAll('.theInput')
+const theInfo = document.querySelector('.theInfo')
+
+theInput.forEach((input) => {
+    input.addEventListener('focus', (event) => {
+        let theInpucter = event.target
+        theInpucter.classList.add('inFocus')
+
+        if(theInpucter.classList.contains('inpucterForName')) {
+            theInfo.textContent = 'Имя'
+        } else if(theInpucter.classList.contains('inpucterForAge')) {
+            theInfo.textContent = 'Возраст'
+        }
+    })
+
+    input.addEventListener('blur', (event) => {
+        let theInpucter = event.target
+        theInpucter.classList.remove('inFocus')
+        theInfo.textContent = 'Ничего'
+    })
+})
+/* -------------------------------------------------------------------- */
+/* Первая практика с Map! 0.10v! */
+/* JavaScript: */
+let theMap = new Map([
+    ['Яблоки', 10],
+    ['Хлеб', 5],
+    ['Молоко', 7],
+])
+theMap.set('Сыр', 3)
+theMap.set('Молоко', 10)
+
+console.log(`На складе молока: ${theMap.get('Молоко')}`)
+
+theMap.has('Яйца') ? console.log(`Да на складе их ${theMap.get('Яйца')}`) :
+console.log('Такого товара нет на складе!');
+
+console.log(theMap)
+/* -------------------------------------------------------------------- */

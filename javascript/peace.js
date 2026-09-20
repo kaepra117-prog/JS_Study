@@ -2679,3 +2679,20 @@ mySet.add('Арбалет');
 console.log(mySet)
 
 /* -------------------------------------------------------------------- */
+/* Имитировование подключение к серверу с помощю Promise()! 0.10v! */
+console.log('Начинаем проверку...');
+let TrueFalse = Math.random() < 0.5;
+
+const checkP = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if(TrueFalse) {
+            resolve('Сервер подключён!')
+        } else {
+            reject(new Error('Ошибка подключения к серверу!'))
+        }
+    }, 2000)
+})
+.then((result) => {console.log(result)})
+.catch((error) => {console.log(error)})
+.finally(() => {console.log('Проверка Завершена!')})
+/* --------------------------------------------------------------------- */

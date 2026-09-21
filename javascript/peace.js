@@ -2696,3 +2696,36 @@ const checkP = new Promise((resolve, reject) => {
 .catch((error) => {console.log(error)})
 .finally(() => {console.log('Проверка Завершена!')})
 /* --------------------------------------------------------------------- */
+/* Типо создаем профиль! 0.10v! */
+function herProfile() {
+    let PName = prompt('Введите ваше Имя!')
+    if(!PName) {
+        alert('Создание профиля отменено!');
+        return;
+    } else if(PName.trim() === "") {
+        alert('Имя не введено!');
+        return;
+    }
+
+    let PAge = +prompt('Введите ваше Возросты!') 
+    if(!PAge || PAge === "") {
+        alert('Создание профиля отменено!');
+        return;
+    }
+
+    let theConfirm = confirm(`Создать профиль для ${PName}?`)
+
+    if(!theConfirm) {
+        alert('Создание профиля отменено!')
+    } else {
+        alert(`
+            Профиль Создан!;
+            Имя: "${PName}";
+            Возрост: "${PAge}";
+            `)
+    }
+    
+    console.log(PName, PAge)
+}
+herProfile()
+/* -------------------------------------------------------------------- */

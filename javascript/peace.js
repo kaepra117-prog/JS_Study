@@ -2729,3 +2729,35 @@ function herProfile() {
 }
 herProfile()
 /* -------------------------------------------------------------------- */
+/* Первая Работа с formData! 0.10v!  */
+/* HTML:
+<form id="theForm">
+    <input type="text" id="input" placeholder="Введите Имя" name="ForName">
+    <input type="number" id="input" placeholder="Введите Возрость" name="ForAge">
+    <input type="text" id="input" placeholder="Введите Город" name="ForCity">
+    <button type="submit">Сохранить профиль</button>
+</form> */
+
+/* JavaScript: */
+const theForm = document.querySelector('#theForm');
+
+theForm.addEventListener('submit', (event) => {
+    const formDate = new FormData(theForm)
+
+    const info = Object.fromEntries(formDate);
+
+    const isAllFilled = [...formDate.values()].every(val => val.toString().trim() !== "");
+
+    if (!isAllFilled) {
+        alert("Ошибка: Заполните абсолютно все поля формы!");
+    } else {
+        console.log("Форма готова к отправке!");
+        console.log(`
+        Имя: ${info.ForName}
+        Взорость: ${info.ForAge}
+        Город: ${info.ForCity}
+        `)
+    }
+    event.preventDefault();
+})
+/* -------------------------------------------------------------------- */

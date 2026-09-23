@@ -2761,3 +2761,32 @@ theForm.addEventListener('submit', (event) => {
     event.preventDefault();
 })
 /* -------------------------------------------------------------------- */
+/* Система смена темы сайта с сохранением!-localStorage! 0.10v!  */
+/* HTML:
+<div id="TheColorAge">
+    <button class="theLightAge">Светлая Сторона</button>
+    <button class="theDarkAge">Тёмная Сторона</button>
+</div> */
+
+/* JavaScript: */
+const TheColorAge = document.querySelector('#TheColorAge');
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+
+if (savedTheme === 'dark') {
+    document.body.style.backgroundColor = 'black';
+} else {
+    document.body.style.backgroundColor = 'white';
+}
+
+TheColorAge.addEventListener('click', (event) => {
+    const btn = event.target.closest('.theLightAge, .theDarkAge');
+
+    if (!btn) return;
+
+    const theme = btn.classList.contains('theLightAge') ? 'light' : 'dark';
+
+    localStorage.setItem('theme', theme);
+    document.body.style.backgroundColor = theme === 'dark' ? 'black' : 'white';
+});
+/* ---------------------------------------------------------------------- */

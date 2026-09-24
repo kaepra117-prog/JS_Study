@@ -2789,4 +2789,36 @@ TheColorAge.addEventListener('click', (event) => {
     localStorage.setItem('theme', theme);
     document.body.style.backgroundColor = theme === 'dark' ? 'black' : 'white';
 });
-/* ---------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+/* Первая практика с fetch! 0.10v! */
+/* HTML:
+<button class="loadUsers">Загрузить пользователей</button>
+<div class="users">Пользователи:</div> */
+
+/* JavaScript: */
+const loadUsers = document.querySelector('.loadUsers')
+const usersHTML = document.querySelector('.users')
+
+async function getUsers() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+        if (!response.ok) {
+            throw new Error(`Ошибка сервера! Статус: ${response.status}`);
+        }
+        const users = await response.json();
+
+        usersHTML.innerHTML = users.map(user => `
+        <div>Имя: ${user.name}</div>
+    `).join('');
+    } catch (error) {
+        usersHTML.innerHTML = `<div>Поймана ошибка: ${error.message}</div>`
+    }
+}
+
+
+loadUsers.addEventListener('click', () => {
+    usersHTML.innerHTML = `<div>Загрузка...</div>`
+    getUsers();
+})
+/* --------------------------------------------------------------------- */

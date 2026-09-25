@@ -2822,3 +2822,26 @@ loadUsers.addEventListener('click', () => {
     getUsers();
 })
 /* --------------------------------------------------------------------- */
+/* Поиск через (Работа с)URL! 0.10v!*/
+/* HTML:
+<input class="searchInput" placeholder="Введите товар">
+<button class="searchBtn">Найти</button>
+
+<div class="result"></div> */
+
+/* JavaScript: */
+const searchInput = document.querySelector('.searchInput');
+const searchBtn = document.querySelector('.searchBtn');
+const result = document.querySelector('.result');
+
+searchBtn.addEventListener('click', (event) => {
+    let theInpucterValue = searchInput.value.trim()
+    const params = new URLSearchParams(); /* -Создание ключа формата, который сам собирает запутанные строки! */
+
+    params.set('page', theInpucterValue); /* -даем ему свое значение! */
+    const newUrl = '?' + params.toString(); /* -Получится "?page=iPhone" */
+    history.pushState(null, "", newUrl) /* -просто тихо меняет текст в адресной строке браузера, не обновляя саму страницу. */
+
+    console.log(params.toString()); /* -и выводим превращая в строк! */
+})
+/* --------------------------------------------------------------------- */

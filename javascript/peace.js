@@ -2845,3 +2845,97 @@ searchBtn.addEventListener('click', (event) => {
     console.log(params.toString()); /* -и выводим превращая в строк! */
 })
 /* --------------------------------------------------------------------- */
+/* Тежяленнная Работа с  VALIDITY! 1.00v! */
+/* HTML:
+<form class="registerForm">
+    <input class="nameInput" type="text" placeholder="Ваше имя" required>
+    <input class="emailInput" type="email" placeholder="Ваш Email" required>
+    <input class="passwordInput" type="password" placeholder="Пароль" required minlength="6">
+    <button class="theOksubmit" type="submit">Зарегистрироваться</button>
+    <div class="result"></div>
+</form> */
+
+/* CSS:
+input:focus {
+    border: 2px solid #202520;
+    outline: none;
+}
+.valid {
+    border: 2px solid green;
+}
+.invalid {
+    border: 2px solid red;
+}
+.valid:focus {
+    border: 2px solid green;
+}
+
+.invalid:focus {
+    border: 2px solid red;
+} */
+
+/* JavaScript: */
+let registerForm = document.querySelector('.registerForm');
+let theResulte = registerForm.querySelector('.result')
+let theOksubmit = document.querySelector('.theOksubmit');
+let theNameCorrect = false;
+let theEmileCorrect = false;
+let thePasswordCorrect = false;
+
+registerForm.addEventListener('input', (event) => {
+    let theInput = event.target
+
+    if(theInput.classList.contains('nameInput')) {
+        if(theInput.validity.valueMissing) {
+            theInput.classList.remove('valid')
+            theInput.classList.add('invalid')
+            theResulte.textContent = 'Поля пустое! введите данные!'
+            theNameCorrect = false;
+        } else {
+            theInput.classList.remove('invalid')
+            theInput.classList.add('valid')
+            theResulte.textContent = 'Эти данные коректные'
+            theNameCorrect = true;
+        }
+    }
+
+    if(theInput.classList.contains('emailInput')) {
+        if(theInput.validity.typeMismatch || theInput.validity.valueMissing) {
+            theResulte.textContent = 'Поля пустое! введите данные! и еще обязателен символ @ и текст после него! и еще обязательно англиские буковки!'
+            theInput.classList.remove('valid')
+            theInput.classList.add('invalid')
+            theEmileCorrect = false;
+        } else {
+            theInput.classList.remove('invalid')
+            theInput.classList.add('valid')
+            theResulte.textContent = 'Эти данные коректные'
+            theEmileCorrect = true;
+        }
+    }
+
+    if(theInput.classList.contains('passwordInput')) {
+        if(theInput.validity.tooShort || theInput.validity.valueMissing) {
+            theResulte.textContent = 'Поля пустое! введите данные! или пароль должен содержать 6 символов! больше!'
+            theInput.classList.remove('valid')
+            theInput.classList.add('invalid')
+            thePasswordCorrect = false;
+        } else {
+            theInput.classList.remove('invalid')
+            theInput.classList.add('valid')
+            theResulte.textContent = 'Эти данные коректные'
+            thePasswordCorrect = true;
+        }
+    }
+})
+
+theOksubmit.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if(theNameCorrect && theEmileCorrect && thePasswordCorrect) {
+        theResulte.textContent = 'Регистрация прошло успешно!✅'
+    } else {
+        theResulte.textContent = 'В ваших формах еще что то не так! пожалуйста заплоните их нормально! Реистрация не прошло!❌'
+    }
+})
+
+/* --------------------------------------------------------------------- */

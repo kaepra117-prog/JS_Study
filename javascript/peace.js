@@ -2939,3 +2939,35 @@ theOksubmit.addEventListener('click', (event) => {
 })
 
 /* --------------------------------------------------------------------- */
+/* Еще один более понятный пракика с localstorage; 0.10v! */
+/* HTML:
+    <textarea class="noteInput" placeholder="Напишите заметку..."></textarea>
+    <button class="clearBtn">Очистить</button>
+    <div class="status"></div> */
+
+/* JavaScript: */
+const noteInput = document.querySelector('.noteInput');
+const clearBtn = document.querySelector('.clearBtn');
+const statusHTML = document.querySelector('.status');
+noteInput.value = localStorage.getItem('theNoteTxt');
+
+if(!localStorage.getItem('theResultTxt')) {
+    statusHTML.textContent = 'Черновик отсутствует'
+} else {
+    statusHTML.textContent = localStorage.getItem('theResultTxt');
+}
+
+noteInput.addEventListener('input', () => {
+    let theTxtArea = noteInput.value
+    localStorage.setItem('theNoteTxt', theTxtArea)
+    localStorage.setItem('theResultTxt', 'Черновик Восстоновлен!')
+    console.log(theTxtArea)
+});
+
+clearBtn.addEventListener('click', () => {
+    noteInput.value = ""
+    statusHTML.textContent = 'Черновик удалён!'
+    localStorage.removeItem('theNoteTxt')
+    localStorage.removeItem('theResultTxt')
+});
+/* -------------------------------------------------------------------- */

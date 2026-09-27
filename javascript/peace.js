@@ -2971,3 +2971,45 @@ clearBtn.addEventListener('click', () => {
     localStorage.removeItem('theResultTxt')
 });
 /* -------------------------------------------------------------------- */
+/* Работа с SessionStorage! 0.10v! */
+/* HTML:
+<button class="tab" data-tab="Главная страница">Главная</button>
+<button class="tab" data-tab="Профиль пользователя">Профиль</button>
+<button class="tab" data-tab="Настройки сайта">Настройки</button>
+
+<div class="content"></div> */
+
+/* CSS:
+.active {
+    border: green solid 2px;
+}*/
+
+/* JavaScript: */
+const tabHTML = document.querySelectorAll('.tab');
+const contentHTML = document.querySelector('.content');
+
+tabHTML.forEach((tbn) => {
+    let theTabTxtTbn = tbn.dataset.tab
+
+    if(sessionStorage.getItem('thePaper') === theTabTxtTbn) {
+        tbn.classList.add('active')
+        contentHTML.textContent = theTabTxtTbn
+    }
+})
+
+tabHTML.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        let theTabTxt = tab.dataset.tab
+        contentHTML.textContent = theTabTxt
+        sessionStorage.setItem('thePaper', theTabTxt)
+
+        tabHTML.forEach((tb) => {
+            if(tb.classList.contains('active')) {
+                tb.classList.remove('active')
+            }
+            })
+        tab.classList.add('active')
+        
+    })
+})
+/* -------------------------------------------------------------------- */

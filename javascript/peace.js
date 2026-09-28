@@ -3013,3 +3013,55 @@ tabHTML.forEach((tab) => {
     })
 })
 /* -------------------------------------------------------------------- */
+/* The My Timer! 0.10v! */
+/* HTML:
+<div class="timer">00:00</div>
+
+<button class="startBtn">Старт</button>
+<button class="pauseBtn">Пауза</button>
+<button class="resetBtn">Сбросить</button>
+
+<div class="status">Игра не запущена</div> */
+
+/* JavaScript: */
+let timerHTML = document.querySelector('.timer');
+let startBtn = document.querySelector('.startBtn');
+let pauseBtn = document.querySelector('.pauseBtn');
+let resetBtn = document.querySelector('.resetBtn');
+let statusHTML = document.querySelector('.status');
+let totalSeconds = 0; // Счётчик секунд с начала игры
+let intervalId = null;
+
+function timerJs(interval) {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+    totalSeconds++; // Прибавляем 1 секунду
+
+    // Считаем минуты (деление нацело) и секунды (остаток от деления)
+    let mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+    let secs = String(totalSeconds % 60).padStart(2, '0');
+
+    // Выводим результат
+    timerHTML.textContent = `${mins}:${secs}`; // Будет выводить "00:01", "00:02" ... "01:05"
+}, interval);
+}
+
+
+startBtn.addEventListener('click', () => {
+    timerJs(1000)
+    statusHTML.textContent = 'Игра запущено!'
+})
+
+pauseBtn.addEventListener('click', () => {
+    clearInterval(intervalId)
+    statusHTML.textContent = 'Игра на Паузе!'
+})
+
+resetBtn.addEventListener('click', () => {
+    clearInterval(intervalId); // остановить таймер
+    intervalId = null;         // очистить ID
+    totalSeconds = 0;          // сбросить счётчик
+    timerHTML.textContent = '00:00'; // показать ноль
+    statusHTML.textContent = 'Таймер сброшен!';
+});
+/* ------------------------------------------------------------------- */

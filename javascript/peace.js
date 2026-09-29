@@ -3065,3 +3065,48 @@ resetBtn.addEventListener('click', () => {
     statusHTML.textContent = 'Таймер сброшен!';
 });
 /* ------------------------------------------------------------------- */
+/* Мини супер маленкое задание с ресурсами! 0.10v! */
+/* HTML:
+<div class="items">
+    <button class="itemBtn" data-item="wood">Дерево +1</button>
+    <button class="itemBtn" data-item="stone">Камень +1</button>
+    <button class="itemBtn" data-item="iron">Железо +1</button>
+</div>
+
+<div class="inventory"></div>
+
+<div class="result"></div>
+
+<button class="clearBtn">Очистить инвентарь</button> */
+
+/* JavaScript: */
+const itemsHTML = document.querySelector('.items');
+const inventoryHTML = document.querySelector('.inventory');
+const resultHTML = document.querySelector('.result');
+const clearBtn = document.querySelector('.clearBtn');
+let theWood = 0;
+let theStone = 0;
+let theIron = 0;
+
+itemsHTML.addEventListener('click', (event) => {
+    let theClick = event.target.dataset.item
+    if(theClick === "wood") {
+        theWood++
+    } else if(theClick === "stone") {
+        theStone++
+    } else if(theClick === "iron") {
+        theIron++
+    }
+
+    inventoryHTML.innerHTML = `
+    <div>Количество Дерево: ${theWood} 100$</div> <br>
+    <div>Количество Камень: ${theStone} 150$</div> <br>
+    <div>Количество Железо: ${theIron} 300$</div> <br>
+    `
+
+    let theSpiceRoll = (theWood * 100) + (theStone * 150) + (theIron * 300)
+    resultHTML.textContent = `Общая стоимость: ${theSpiceRoll}$`
+    console.log(theClick)
+})
+
+/* -------------------------------------------------------------------- */

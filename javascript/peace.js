@@ -3110,3 +3110,52 @@ itemsHTML.addEventListener('click', (event) => {
 })
 
 /* -------------------------------------------------------------------- */
+/* Создание собственного Ивента! 0.10v! */
+/* HTML:
+<button class="moneyBtn">Получить деньги</button>
+<button class="factoryBtn">Построить фабрику</button>
+<button class="warBtn">Объявить войну</button>
+
+<div class="notification"></div>
+
+<button class="clearBtn">Очистить уведомление</button> */
+
+/* JavaScript: */
+const moneyBtn = document.querySelector('.moneyBtn');
+const factoryBtn = document.querySelector('.factoryBtn');
+const warBtn = document.querySelector('.warBtn');
+const notification = document.querySelector('.notification');
+const clearBtn = document.querySelector('.clearBtn');
+
+function showInfo(text) {
+    document.dispatchEvent(new CustomEvent('EventForInfo', {
+        detail: text
+    }));
+}
+
+document.addEventListener('EventForInfo', (event) => {
+    const messageItem = document.createElement('div');
+    messageItem.textContent = event.detail;
+    notification.append(messageItem);
+
+    setTimeout(() => {
+        messageItem.remove();
+    }, 3000);
+});
+
+moneyBtn.addEventListener('click', () => {
+    showInfo('Получено +10000💰');
+});
+
+factoryBtn.addEventListener('click', () => {
+    showInfo('Построена новая фабрика 🏭');
+});
+
+warBtn.addEventListener('click', () => {
+    showInfo('Война объявлена ⚠️');
+});
+
+clearBtn.addEventListener('click', () => {
+    notification.innerHTML = ""
+})
+/* ------------------------------------------------------------------- */

@@ -3159,3 +3159,48 @@ clearBtn.addEventListener('click', () => {
     notification.innerHTML = ""
 })
 /* ------------------------------------------------------------------- */
+/* задание с Window History! 0.10v! */
+/* HTML:
+<button class="homeBtn">Главная</button>
+<button class="profileBtn">Профиль</button>
+<button class="settingsBtn">Настройки</button>
+
+<div class="page">В основном</div> */
+
+/* JavaScript: */
+const homeBtn = document.querySelector('.homeBtn');
+const profileBtn = document.querySelector('.profileBtn');
+const settingsBtn = document.querySelector('.settingsBtn');
+const pageDiv = document.querySelector('.page');
+
+function navigate(pageId, content, url) {
+    const state = { pageId, content };
+    history.pushState(state, '', url);
+    pageDiv.textContent = content;
+}
+
+// Сохраняем состояние страницы, открытой при первой загрузке
+history.replaceState(
+    { pageId: 'homeWeb', content: pageDiv.textContent },
+    '',
+    location.pathname
+);
+
+homeBtn.addEventListener('click', () => {
+    navigate('homeWeb', 'Главная Страница!', '/homeWeb');
+});
+
+profileBtn.addEventListener('click', () => {
+    navigate('profileWeb', 'Профиль!', '/profileWeb');
+});
+
+settingsBtn.addEventListener('click', () => {
+    navigate('settingsWeb', 'Настройки!', '/settingsWeb');
+});
+
+window.addEventListener('popstate', (event) => {
+    if (event.state) {
+        pageDiv.textContent = event.state.content;
+    }
+});
+/* ------------------------------------------------------------------- */

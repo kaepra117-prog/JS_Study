@@ -3159,7 +3159,7 @@ clearBtn.addEventListener('click', () => {
     notification.innerHTML = ""
 })
 /* ------------------------------------------------------------------- */
-/* задание с Window History! 0.10v! */
+/* задание с Window History! 0.10v! "used(AI)!" */
 /* HTML:
 <button class="homeBtn">Главная</button>
 <button class="profileBtn">Профиль</button>
@@ -3204,3 +3204,35 @@ window.addEventListener('popstate', (event) => {
     }
 });
 /* ------------------------------------------------------------------- */
+/* Work with history.pushState(), 0.10v! */
+/* HTML:
+<div class="theBtns">
+    <button class="homeBtn">Главная</button>
+    <button class="aboutBtn">О нас</button>
+    <button class="contactsBtn">Контакты</button>
+</div>
+
+<div class="page">Главная страница</div> */
+
+/* JavaScript: */
+const theBtns = document.querySelector('.theBtns');
+const pageHTML = document.querySelector('.page');
+
+function navigate(pageId, content, url) {
+    const state = { pageId, content };
+    history.pushState(state, '', url);
+    pageHTML.textContent = content;
+}
+
+theBtns.addEventListener('click', (event) => {
+    let theClick = event.target
+
+    if(theClick.classList.contains('homeBtn')) {
+        navigate('homeWeb', 'Главная Страница', '/homeWeb');
+    } else if(theClick.classList.contains('aboutBtn')) {
+        navigate('aboutWeb', 'О Нас', '/aboutWeb');
+    } else if(theClick.classList.contains('contactsBtn')) {
+        navigate('contactsWeb', 'Контакты', '/contactsWeb');
+    }
+})
+/* -------------------------------------------------------------------- */

@@ -3236,3 +3236,50 @@ theBtns.addEventListener('click', (event) => {
     }
 })
 /* -------------------------------------------------------------------- */
+/* кнопка назад в странице! 0.10v! */
+/* HTML:
+<button class="page1">Страница 1</button>
+<button class="page2">Страница 2</button>
+<button class="backBtn">← Назад</button>
+
+<div class="page">Страница 1</div> */
+
+/* JavaScript: */
+const page1 = document.querySelector('.page1');
+const page2 = document.querySelector('.page2');
+const backBtn = document.querySelector('.backBtn');
+const pageHTML = document.querySelector('.page');
+
+function navigate(pageId, content, url) {
+    const state = { pageId, content };
+    history.pushState(state, '', url);
+    pageHTML.textContent = content;
+}
+
+page1.addEventListener('click', () => {
+    navigate('page1', 'Страница-1', '/page1');
+})
+page2.addEventListener('click', () => {
+    navigate('page2', 'Страница-2', '/page2');
+})
+backBtn.addEventListener('click', () => {
+    window.history.back()
+})
+
+window.addEventListener('popstate', (event) => {
+const state = event.state;
+
+    // 1. ЗАЩИТА: Если state === null (мы вернулись на самую первую страницу)
+    if (!state) {
+        pageHTML.textContent = 'Страница 1'; // Возвращаем исходный текст
+        return; // Выходим из функции, чтобы не вызывать ошибку дальше
+    }
+
+    // 2. Если state существует, спокойно проверяем данные:
+    if (state.pageId === 'page1') {
+        pageHTML.textContent = 'Страница-1';
+    } else if (state.pageId === 'page2') {
+        pageHTML.textContent = 'Страница-2';
+    }
+});
+/* ------------------------------------------------------------------- */

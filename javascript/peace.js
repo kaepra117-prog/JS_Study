@@ -3065,7 +3065,7 @@ resetBtn.addEventListener('click', () => {
     statusHTML.textContent = 'Таймер сброшен!';
 });
 /* ------------------------------------------------------------------- */
-/* Мини супер маленкое задание с ресурсами! 0.10v! */
+/*  задание с ресурсами! Map() 0.20v! */
 /* HTML:
 <div class="items">
     <button class="itemBtn" data-item="wood">Дерево +1</button>
@@ -3075,38 +3075,43 @@ resetBtn.addEventListener('click', () => {
 
 <div class="inventory"></div>
 
-<div class="result"></div>
-
-<button class="clearBtn">Очистить инвентарь</button> */
+<button class="clearBtn">Очистить инвентарь</button>*/
 
 /* JavaScript: */
 const itemsHTML = document.querySelector('.items');
 const inventoryHTML = document.querySelector('.inventory');
-const resultHTML = document.querySelector('.result');
 const clearBtn = document.querySelector('.clearBtn');
-let theWood = 0;
-let theStone = 0;
-let theIron = 0;
+const inventoryStats = new Map();
 
 itemsHTML.addEventListener('click', (event) => {
     let theClick = event.target.dataset.item
-    if(theClick === "wood") {
-        theWood++
-    } else if(theClick === "stone") {
-        theStone++
-    } else if(theClick === "iron") {
-        theIron++
-    }
+
+if (theClick === "wood") {
+    const currentWood = inventoryStats.get("wood") || 0;
+    inventoryStats.set("wood", currentWood + 1);         
+} else if (theClick === "stone") {
+    const currentStone = inventoryStats.get("stone") || 0;
+    inventoryStats.set("stone", currentStone + 1);
+} else if (theClick === "iron") {
+    const currentIron = inventoryStats.get("iron") || 0;
+    inventoryStats.set("iron", currentIron + 1);
+}
+
+    let theWood = inventoryStats.get('wood');
+    let theStone = inventoryStats.get('stone');
+    let theIron = inventoryStats.get('iron');
 
     inventoryHTML.innerHTML = `
-    <div>Количество Дерево: ${theWood} 100$</div> <br>
-    <div>Количество Камень: ${theStone} 150$</div> <br>
-    <div>Количество Железо: ${theIron} 300$</div> <br>
+    <div>Количество Дерево: ${theWood}</div> <br>
+    <div>Количество Камень: ${theStone}</div> <br>
+    <div>Количество Железо: ${theIron}</div> <br>
     `
 
-    let theSpiceRoll = (theWood * 100) + (theStone * 150) + (theIron * 300)
-    resultHTML.textContent = `Общая стоимость: ${theSpiceRoll}$`
     console.log(theClick)
+})
+clearBtn.addEventListener('click', () => {
+    inventoryHTML.innerHTML = ""
+    inventoryStats.clear()
 })
 
 /* -------------------------------------------------------------------- */

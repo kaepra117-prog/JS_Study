@@ -3288,3 +3288,77 @@ const state = event.state;
     }
 });
 /* ------------------------------------------------------------------- */
+/* Система переходов по странице без перезагрузки! 0.10v! */
+/* HTML:
+<nav class="navHTML">
+    <button class="homeBtn">Главная</button>
+    <button class="aboutBtn">О нас</button>
+    <button class="gameBtn">Игра</button>
+</nav>
+
+<div class="pageHTNL"></div>
+
+<div class="controlsHTML">
+    <button class="backBtn">← Назад</button>
+    <button class="forwardBtn">Вперёд →</button>
+</div>
+
+<div class="currentUrl"></div> */
+
+/* JavaScript: */
+const navHTML = document.querySelector('.navHTML');
+const pageHTML = document.querySelector('.pageHTNL');
+const controlsHTML = document.querySelector('.controlsHTML');
+const currentUrl = document.querySelector('.currentUrl');
+
+function navigate(pageId, content, url) {
+    const state = { pageId, content };
+    history.pushState(state, '', url);
+    pageHTML.textContent = content;
+    currentUrl.textContent = `Текущий URL: ${location}`
+}
+
+navHTML.addEventListener('click', (event) => {
+    let theClick = event.target;
+
+    if (theClick.classList.contains('homeBtn')) {
+        navigate('homeWeb', 'Главная Страница!', '/homeWeb')
+    } else if (theClick.classList.contains('aboutBtn')) {
+        navigate('aboutWeb', 'О нас!', '/aboutWeb')
+    } else if (theClick.classList.contains('gameBtn')) {
+        navigate('gameWeb', 'Раздел игры', '/gameWeb')
+    }
+})
+
+controlsHTML.addEventListener('click', (event) => {
+    let theClick = event.target
+
+    if (theClick.classList.contains('backBtn')) {
+        history.back()
+    } else if (theClick.classList.contains('forwardBtn')) {
+        history.forward()
+    }
+})
+
+window.addEventListener("popstate", (event) => {
+    if (event.state?.pageId === "homeWeb") {
+        pageHTML.textContent = "Главная Страница!";
+        currentUrl.textContent = `Текущий URL: ${location}`
+    }
+
+    if (event.state?.pageId === "aboutWeb") {
+        pageHTML.textContent = "О нас!";
+        currentUrl.textContent = `Текущий URL: ${location}`
+    }
+
+    if (event.state?.pageId === "gameWeb") {
+        pageHTML.textContent = "Раздел игры";
+        currentUrl.textContent = `Текущий URL: ${location}`
+    }
+
+    if(event.state === null) {
+        pageHTML.textContent = "";
+        currentUrl.textContent = ``
+    }
+});
+/* ---------------------------------------------------------------------- */

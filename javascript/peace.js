@@ -3362,3 +3362,59 @@ window.addEventListener("popstate", (event) => {
     }
 });
 /* ---------------------------------------------------------------------- */
+/* Беспонятная практика с FormData и fetch! 0.10v */
+/* HTML:
+<form class="profileForm">
+    <input name="name" type="text" placeholder="Имя" required>
+    <input name="age" type="number" placeholder="Возраст" required>
+    
+    <select name="country">
+        <option value="Kazakhstan">Казахстан</option>
+        <option value="Russia">Россия</option>
+        <option value="Germany">Германия</option>
+    </select>
+
+    <button type="submit">Отправить</button>
+</form>
+
+<div class="statusHTML"></div> */
+
+/* JavaScript: */
+const profileForm = document.querySelector('.profileForm');
+const statusHTML = document.querySelector('.statusHTML');
+
+profileForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(profileForm);
+    const nickname = formData.get('name')
+    const ageFor = formData.get('age')
+    const countrySelect = formData.get('country')
+    console.log(nickname)
+    console.log(ageFor)
+    console.log(countrySelect)
+
+    const allData = Object.fromEntries(formData);
+    console.log('Все данные:', allData);
+
+    statusHTML.textContent = "Отправка данных..."
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+        .then((response) => {
+            console.log('response:', response)
+            statusHTML.textContent = "Данные успешно отправлены! ✅"
+
+            if (!response.ok) {
+                const errorMessage = response.status === 404
+                    ? "Ошибка отправки! ❌"
+                    : 'Что-то пошло не так :('
+
+                throw new Error(errorMessage)
+            }
+
+            return response.json()
+        }) .catch((error) => {
+            statusHTML.textContent = error.message
+        })
+})
+
+/* ---------------------------------------------------------------------- */
